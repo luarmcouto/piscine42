@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 char	*ft_strupcase(char *str);
 
 char	*ft_strupcase(char *str)
@@ -19,7 +21,7 @@ char	*ft_strupcase(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] > 96 && str[i] < 123)
+		if (str[i] >= 97 && str[i] <= 122)
 		{
 			str[i] -= 32;
 			i++;
@@ -31,12 +33,12 @@ char	*ft_strupcase(char *str)
 	}
 	return (str);
 }
-/*
+
 int	main(void)
 {
-	char	stri[] = "AAAaaaaAAAAaaaKKKkkKKKKcccccc";
+	char	stri[] = "AAAaaaaAAAAaaaKKKkkKKKKcccczcc";
 	
 	printf("string antiga: %s \n", stri);
 	ft_strupcase(stri);
 	printf("string nova: %s \n", stri);
-}*/
+}
