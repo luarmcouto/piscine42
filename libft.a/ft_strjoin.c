@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 19:47:49 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 20:41:27 by luamonteiro      ###   ########.fr       */
+/*   Created: 2024/05/10 22:43:18 by luamonteiro       #+#    #+#             */
+/*   Updated: 2024/05/10 22:43:39 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char	*cat;
+	size_t	i;
+	size_t	h;
 
-	i = (ft_strlen(str));
-	while (i >= 0)
+	cat = malloc(sizeof (char) * ((ft_strlen((char *)s1) + ft_strlen((char *)s2)
+					) + 1));
+	if (cat == 0)
+		return (NULL);
+	i = 0;
+	while (s1[i] != 0)
 	{
-		if ((char)c == str[i])
-			return ((char *)&str[i]);
-		i--;
+		cat[i] = s1[i];
+		i++;
 	}
-	return (0);
+	h = 0;
+	while (s2[h] != 0)
+	{
+		cat[i] = s2[h];
+		h++;
+		i++;
+	}
+	cat[i] = '\0';
+	return (cat);
 }
