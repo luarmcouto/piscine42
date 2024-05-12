@@ -6,21 +6,19 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:39:22 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 13:11:02 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/12 10:58:34 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *ptr, size_t num)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*p;
+	char	*tmp_ptr;
 
-	p = ptr;
-	while (num--)
-	{
-		*p++ = 0;
-	}
+	tmp_ptr = (char *) s;
+	while (n--)
+		*(tmp_ptr++) = 0;
 }
 /*
 int	main(void) {

@@ -6,38 +6,33 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:53:43 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 14:53:11 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/11 20:06:17 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t num)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	const char	*psrc;
-	char		*pdst;
-	size_t		i;
+	unsigned char	*tmp_src;
+	unsigned char	*tmp_dst;
 
-	pdst = dest;
-	psrc = src;
-	if (!pdst && !psrc)
+	if (!dst && !src)
 		return (0);
-	i = 0;
-	while (i < num)
-	{
-		pdst[i] = psrc[i];
-		i++;
-	}
-	return (dest);
+	tmp_dst = (unsigned char *) dst;
+	tmp_src = (unsigned char *) src;
+	while (n--)
+		*(tmp_dst++) = *(tmp_src++);
+	return (dst);
 }
 /*
 int	main(void) {
 	char src[] = "Hello, world!";
-	char dest[50];
+	char dst[50];
 
-	ft_memcpy(dest, src, sizeof(src));
+	ft_memcpy(dst, src, sizeof(src));
 
-	printf("dest: %s\n", dest);
+	printf("dst: %s\n", dst);
 
 	return (0);
 }*/

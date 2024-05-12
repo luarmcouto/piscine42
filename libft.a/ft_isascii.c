@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:55:01 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 12:55:02 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/11 18:56:29 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 /*
 int	main(void) {

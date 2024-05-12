@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 22:44:36 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 22:45:15 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/11 15:56:08 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*result;
 
 	start = 0;
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	while (end && ft_strrchr(set, s1[end]))
+	while (end > start && ft_strrchr(set, s1[end - 1]))
 		end--;
-	result = ft_substr(s1, start, (end - start + 1));
+	result = ft_substr(s1, start, (end - start));
 	return (result);
 }

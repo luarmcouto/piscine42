@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:56:29 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 12:56:30 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/11 18:07:07 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	length;
+	size_t	i;
 
-	length = 0;
-	while (*str != '\0')
-	{
-		length++;
-		str++;
-	}
-	return (length);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 /*
 int	main(void) {

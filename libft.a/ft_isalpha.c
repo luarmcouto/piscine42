@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:54:38 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 12:54:41 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/11 18:56:40 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	ft_isalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 /*
 int	main(void) {
