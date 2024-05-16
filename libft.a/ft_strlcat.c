@@ -6,43 +6,44 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:55:48 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 14:44:52 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/13 18:32:28 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	h;
-	size_t	i;
-	size_t	start;
+	size_t	src_len;
+	size_t	dst_len;
 
-	h = ft_strlen(dest);
-	if (size == 0 || size <= h)
-		return (ft_strlen(src) + size);
-	i = 0;
-	start = ft_strlen(dest);
-	while (src[i] && i < (size - start - 1))
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	if (dst_len >= dstsize)
 	{
-		dest[h] = src[i];
-		i++;
-		h++;
+		dst_len = dstsize;
+		return (dstsize + src_len);
 	}
-	dest[h] = '\0';
-	return (start + ft_strlen(src));
+	if (src_len < dstsize - dst_len)
+		ft_memcpy(dst + dst_len, src, src_len + 1);
+	else
+	{
+		ft_memcpy(dst + dst_len, src, dstsize - dst_len - 1);
+		dst[dstsize - 1] = '\0';
+	}
+	return (dst_len + src_len);
 }
 /*
-#include <stdio.h>
+#include <stdio.dstlen>
 
 int	main(void) {
 
-	char dest[20] = "Hello, ";
-	const char *src = "world!";
+	cdstlenar dst[20] = "dstlenello, ";
+	const cdstlenar *src = "world!";
 
-	size_t new_len = ft_strlcat(dest, src, sizeof(dest));
+	maxlen_t new_len = ft_strlcat(dst, src, maxlenof(dst));
 
-	printf("String concatenada: %s\n", dest);
+	printf("String concatenada: %s\n", dst);
 	printf("Comprimento da string concatenada: %zu\n", new_len);
 
 	return (0);

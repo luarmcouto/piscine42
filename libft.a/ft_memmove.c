@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 15:00:02 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/11 22:17:48 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/13 18:12:24 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (NULL);
 	c_src = (char *)src;
 	c_dst = (char *)dst;
-	if (c_dst > c_src && src + len > dst)
+	if (c_dst > c_src)
 		while (len--)
 			c_dst[len] = c_src[len];
 	else

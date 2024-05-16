@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 19:47:49 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/11 21:10:16 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/13 13:21:55 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
-	char	*res;
-	char	cc;
+	char	*last;
 
-	cc = (char)c;
-	res = NULL;
-	i = 0;
-	while (s[i])
+	last = NULL;
+	while (*s)
 	{
-		if (s[i] == cc)
-			res = (char *)&s[i];
-		i++;
+		if (*s == (char)c)
+			last = (char *)s;
+		s++;
 	}
-	if (s[i] == cc)
-		res = (char *)&s[i];
-	return (res);
+	if (*s == (char)c)
+		last = (char *)s;
+	return (last);
 }
