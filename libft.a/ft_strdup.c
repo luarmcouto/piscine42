@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 22:12:00 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 22:12:19 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/20 10:41:42 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s)
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (s[i] != 0)
+	while (s[i])
 	{
 		str[i] = s[i];
 		i++;

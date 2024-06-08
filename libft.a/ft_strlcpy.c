@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:56:19 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 14:49:12 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/20 11:19:31 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t sizedest)
 
 	sizesrc = ft_strlen(src);
 	i = 0;
-	if (sizedest != 0)
+	if (sizedest)
 	{
 		while (src[i] != 0 && i < (sizedest - 1))
 		{

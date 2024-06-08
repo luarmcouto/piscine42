@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 22:43:18 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/10 22:43:39 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/05/20 10:50:58 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	cat = malloc(sizeof (char) * ((ft_strlen((char *)s1) + ft_strlen((char *)s2)
 					) + 1));
-	if (cat == 0)
+	if (!cat)
 		return (NULL);
 	i = 0;
 	while (s1[i] != 0)
