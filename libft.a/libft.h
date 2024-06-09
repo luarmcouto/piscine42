@@ -6,7 +6,7 @@
 /*   By: luamonteiro <luamonteiro@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:56:40 by luamonteiro       #+#    #+#             */
-/*   Updated: 2024/05/20 16:38:42 by luamonteiro      ###   ########.fr       */
+/*   Updated: 2024/06/09 15:31:55 by luamonteiro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+int					ft_putchr(char c);
 typedef struct s_list
 {
 	void			*content;
