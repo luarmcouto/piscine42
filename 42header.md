@@ -31,22 +31,45 @@ cp ~/42header/plugin/stdheader.vim ~/.vim/plugin/
 
 ## 🛠️ 3. Configurar seu Nome e E-mail  
 
-Abra o arquivo de configuração do Vim (`.vimrc`):  
+Você pode definir seu nome e e-mail de duas formas:  
+
+### **🔹 Opção 1: Configurar no `.zshrc`** *(recomendado se quiser usar o header em qualquer editor de texto que suporte essa variável)*  
+
+Abra o arquivo `.zshrc` e adicione estas linhas:  
+
+```bash
+export USER='seu_login_42'
+export MAIL='seu_email@42.fr'
+```
+
+Salve e execute:  
+
+```bash
+source ~/.zshrc
+```
+
+Isso garantirá que o `42 Header` use sempre seu login e e-mail corretos.  
+
+---
+
+### **🔹 Opção 2: Configurar diretamente no `.vimrc`** *(funciona apenas no Vim)*  
+
+Edite o arquivo de configuração do Vim:  
 
 ```bash
 vim ~/.vimrc
 ```
 
-Adicione as seguintes linhas no final do arquivo:  
+E adicione:  
 
 ```vim
 let g:user42 = 'seu_login_42'
 let g:mail42 = 'seu_email@42.fr'
 ```
 
-📌 **Substitua**:  
-- `'seu_login_42'` → Pelo seu login da 42 (o mesmo da intra).  
-- `'seu_email@42.fr'` → Pelo seu e-mail da 42.  
+📌 **Substitua**:
+- `'seu_login_42'` → Seu login da 42 (mesmo da intra).  
+- `'seu_email@42.fr'` → Seu e-mail da 42.  
 
 Salve e saia do Vim pressionando `ESC`, depois `:wq` e `Enter`.  
 
@@ -73,6 +96,17 @@ autocmd BufNewFile *.c,*.h :Stdheader
 ```
 
 Agora, ao criar um novo arquivo `.c` ou `.h`, o **header** será gerado automaticamente! 🎉  
+
+---
+
+## ⌨️ 6. Atalho Rápido  
+
+Em vez de digitar `:Stdheader` no Vim, você pode simplesmente pressionar `F1`.  
+
+⚠️ **Se estiver no Linux e o F1 abrir o menu de ajuda do terminal**, desative esse atalho:  
+- No **Terminator**:  
+  - Clique com o botão direito no terminal → **Preferences** → **Shortcuts**  
+  - Mude a tecla de **Help** para outra diferente de **F1**  
 
 ---
 
