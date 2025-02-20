@@ -29,67 +29,69 @@ cp ~/42header/plugin/stdheader.vim ~/.vim/plugin/
 
 ---
 
-## 🛠️ 3. Configurar seu Nome e E-mail  
+## 🛠️ 3. Configurar seu Nome e E-mail (Obrigatório!)  
 
-Você pode definir seu nome e e-mail de duas formas:  
+A única forma garantida de fazer o header funcionar corretamente é **configurar as variáveis no `.zshrc`**.  
 
-### **🔹 Opção 1: Configurar no `.zshrc`** *(recomendado se quiser usar o header em qualquer editor de texto que suporte essa variável)*  
+Abra o arquivo de configuração do shell:  
 
-Abra o arquivo `.zshrc` e adicione estas linhas:  
+```bash
+vim ~/.zshrc
+```
+
+E adicione estas linhas no final do arquivo:  
 
 ```bash
 export USER='seu_login_42'
-export MAIL='seu_email@42.fr'
+export MAIL='seu_login_42@student.42.fr'
 ```
 
-Salve e execute:  
+📌 **Substitua** `seu_login_42` pelo seu login real da intra da 42.  
+
+Agora, salve e aplique as mudanças:  
 
 ```bash
 source ~/.zshrc
 ```
 
-Isso garantirá que o `42 Header` use sempre seu login e e-mail corretos.  
+⚠️ **Importante:** Sem essa configuração, o header pode aparecer com `<marvin@42.fr>`, pois o Vim não encontrará seu e-mail correto.  
+
+Para testar se a configuração foi aplicada corretamente, rode o comando:  
+
+```bash
+echo $MAIL
+```
+
+Se retornar seu e-mail da 42, está tudo certo! 🎉  
 
 ---
 
-### **🔹 Opção 2: Configurar diretamente no `.vimrc`** *(funciona apenas no Vim)*  
+## ✅ 4. Testar o 42 Header  
 
-Edite o arquivo de configuração do Vim:  
+Agora, abra qualquer arquivo `.c` ou `.h` no Vim e pressione:  
+
+```
+F1
+```
+
+Se tudo foi configurado corretamente, o **header padrão da 42** será inserido automaticamente no topo do arquivo.  
+
+⚠️ **Se estiver no Linux e o F1 abrir o menu de ajuda do terminal**, desative esse atalho:  
+- No **Terminator**:  
+  - Clique com o botão direito no terminal → **Preferences** → **Shortcuts**  
+  - Mude a tecla de **Help** para outra diferente de **F1**  
+
+---
+
+## 🔄 5. (Opcional) Inserção Automática do Header  
+
+Se quiser que o **42 Header** seja adicionado automaticamente sempre que criar um novo arquivo `.c` ou `.h`, edite o `.vimrc`:  
 
 ```bash
 vim ~/.vimrc
 ```
 
 E adicione:  
-
-```vim
-let g:user42 = 'seu_login_42'
-let g:mail42 = 'seu_email@42.fr'
-```
-
-📌 **Substitua**:
-- `'seu_login_42'` → Seu login da 42 (mesmo da intra).  
-- `'seu_email@42.fr'` → Seu e-mail da 42.  
-
-Salve e saia do Vim pressionando `ESC`, depois `:wq` e `Enter`.  
-
----
-
-## ✅ 4. Testar o 42 Header  
-
-Agora, abra qualquer arquivo `.c` ou `.h` no Vim e digite:  
-
-```vim
-:Stdheader
-```
-
-Se tudo foi configurado corretamente, o **header padrão da 42** será inserido automaticamente no topo do arquivo.  
-
----
-
-## 🔄 5. (Opcional) Inserção Automática do Header  
-
-Se quiser que o **42 Header** seja adicionado automaticamente sempre que criar um novo arquivo `.c` ou `.h`, edite novamente o `.vimrc` e adicione:  
 
 ```vim
 autocmd BufNewFile *.c,*.h :Stdheader
@@ -99,17 +101,6 @@ Agora, ao criar um novo arquivo `.c` ou `.h`, o **header** será gerado automati
 
 ---
 
-## ⌨️ 6. Atalho Rápido  
-
-Em vez de digitar `:Stdheader` no Vim, você pode simplesmente pressionar `F1`.  
-
-⚠️ **Se estiver no Linux e o F1 abrir o menu de ajuda do terminal**, desative esse atalho:  
-- No **Terminator**:  
-  - Clique com o botão direito no terminal → **Preferences** → **Shortcuts**  
-  - Mude a tecla de **Help** para outra diferente de **F1**  
-
----
-
 ## 🎯 Conclusão  
 
-Agora você tem o **42 Header** configurado no Vim, pronto para ser usado nos seus projetos! Se encontrar problemas, certifique-se de que todas as etapas foram seguidas corretamente. 🚀  
+Agora você tem o **42 Header** configurado no Vim, pronto para ser usado nos seus projetos! Basta pressionar `F1` dentro do arquivo para inseri-lo rapidamente. 🚀  
