@@ -1,0 +1,60 @@
+Para instalar o 42 header no seu usuário e poder usá-lo no vim, siga estes passos:
+
+1. Clonar o repositório do 42header
+
+O 42 header faz parte do sistema de norminette da 42. O primeiro passo é baixar o script que permite adicionar automaticamente o cabeçalho.
+
+Abra o terminal e execute:
+
+git clone https://github.com/42Paris/42header.git ~/42header
+
+Isso criará uma pasta chamada 42header dentro do seu diretório pessoal (~).
+
+2. Instalar os arquivos no seu sistema
+
+Agora, copie os arquivos do header para a pasta correta dentro do seu usuário:
+
+mkdir -p ~/.vim/plugin
+cp ~/42header/plugin/stdheader.vim ~/.vim/plugin/
+
+O que isso faz:
+	•	mkdir -p ~/.vim/plugin → Cria a pasta de plugins do Vim, se ainda não existir.
+	•	cp ~/42header/plugin/stdheader.vim ~/.vim/plugin/ → Copia o script do header para essa pasta.
+
+3. Configurar seu nome e e-mail
+
+O header precisa do seu nome e e-mail para preencher corretamente as informações no topo dos arquivos. Para isso, edite ou crie o arquivo de configurações .vimrc no seu diretório pessoal:
+
+vim ~/.vimrc
+
+Dentro do arquivo, adicione estas linhas no final:
+
+let g:user42 = 'seu_login_42'
+let g:mail42 = 'seu_email@42.fr'
+
+Substitua:
+	•	seu_login_42 → Pelo seu login da 42 (o mesmo que você usa para logar na intra).
+	•	seu_email@42.fr → Pelo seu e-mail da 42.
+
+Salve e saia do Vim (ESC → :wq → Enter).
+
+4. Testar o 42 header no Vim
+
+Agora, abra qualquer arquivo .c ou .h no Vim e digite:
+
+:Stdheader
+
+Se tudo foi configurado corretamente, o cabeçalho padrão da 42 será inserido automaticamente no topo do arquivo.
+
+5. (Opcional) Automatizar a inserção do header
+
+Se quiser que o header seja inserido automaticamente ao criar um novo arquivo .c ou .h, adicione esta linha ao seu .vimrc:
+
+autocmd BufNewFile *.c,*.h :Stdheader
+
+Isso fará com que sempre que um novo arquivo .c ou .h for criado, o header seja inserido automaticamente.
+
+Agora você já pode usar o 42 header no Vim dentro do seu usuário!
+
+
+Se foi util pra voce, deixa uma ⭐️👍🏾
